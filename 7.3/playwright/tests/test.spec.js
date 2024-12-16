@@ -14,7 +14,8 @@ test("Failed authorization", async () => {
   await page.click('[data-testid="login-submit-btn"]');
   const error = await page.locator('[data-testid="login-error-hint"]');
   await expect(error).toHaveText("Вы ввели неправильно логин или пароль");
-});
+  browser.close();
+}, 50000);
 
 test("validUser", async ({ page }) => {
   await page.goto("https://netology.ru//?modal=sign_in");
@@ -27,4 +28,5 @@ test("validUser", async ({ page }) => {
   await expect(
     page.getByRole("heading", { name: "Моё обучение" })
   ).toBeVisible();
-});
+  browser.close();
+}, 50000);
