@@ -24,5 +24,5 @@ module.exports = {
     } catch (error) {
       throw new Error(`Not possible to type text for selector: ${selector}`);
     }
-  },
+  }
 };
